@@ -1,15 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "home",
-    component: () => import("../views/home.vue"),
+    component: () => import("/views/home.vue"),
   },
-  // {
-  //   path: "/about",
-  //   name: "about",
-  //   component: () => import("../views/about.vue"),
-  // },
+  {
+    path: "/about",
+    name: "about",
+    component: () => import("/views/about.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -21,6 +22,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   console.log("beforeEach to:", to);
   console.log("beforeEach from", from);
+  next();
 });
 
 export default router;
