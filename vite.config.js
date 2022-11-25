@@ -5,7 +5,7 @@ import viteCompression from "vite-plugin-compression";
 // https://vitejs.dev/config/
 export default defineConfig({
   define: {
-    "process.env": {},
+    "process.env": process.env,
   },
   plugins: [vue(), viteCompression()],
   resolve: {
